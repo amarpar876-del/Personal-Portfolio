@@ -5,16 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Amar Singh Parmar | Portfolio</title>
   <link rel="stylesheet" href="style.css?v=1" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- HEADER -->
   <header class="site-header">
-    <div class="header-content">
-      <h1>Amar Singh Parmar</h1>
-      <p>Reliable | Detail-Oriented | Professional</p>
-      <a href="Amar_Singh_Parmar_Resume.pdf" class="btn-resume" target="_blank">Download Resume</a>
-    </div>
+    <h1>Amar Singh Parmar</h1>
+    <p>Reliable | Detail-Oriented | Professional</p>
+    <a href="Amar_Singh_Parmar_Resume.pdf" class="resume-btn" target="_blank">Download Resume</a>
   </header>
 
   <!-- NAVBAR -->
@@ -25,35 +23,34 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <!-- MAIN CONTENT -->
+  <!-- MAIN -->
   <main class="container">
     <!-- ABOUT -->
-    <section id="about" class="fade-in">
+    <section id="about">
       <h2>About Me</h2>
-      <p>Hello! I’m a Grade 12 student with a strong work ethic and a passion for helping others. I’m punctual, reliable, and thrive in team environments. I enjoy learning new skills and taking initiative to get things done efficiently.</p>
+      <p>Hi! I’m a Grade 12 student with a strong work ethic and passion for helping others. I’m punctual, reliable, and thrive in team environments. I enjoy learning new skills and taking initiative to get things done efficiently.</p>
       <p>In my free time, I enjoy sports, fashion, and spending time with family.</p>
     </section>
 
     <!-- SKILLS -->
-    <section id="skills" class="fade-in">
+    <section id="skills">
       <h2>Skills</h2>
-      <ul class="skills-list">
+      <ul>
         <li>Customer Service & Communication</li>
         <li>Teamwork & Collaboration</li>
         <li>Problem-Solving & Initiative</li>
         <li>Time Management & Reliability</li>
-        <li>Basic Tech Skills (HTML/CSS)</li>
+        <li>Basic Tech Skills (HTML & CSS)</li>
       </ul>
     </section>
 
-    <!-- EXPERIENCE & CERTIFICATIONS -->
-    <section id="experience" class="fade-in">
+    <!-- EXPERIENCE -->
+    <section id="experience">
       <h2>Experience & Achievements</h2>
 
-      <div class="card">
+      <div class="project-card">
         <h3>BC Coastal Soccer League</h3>
-        <p><strong>Role:</strong> Paid Referee</p>
-        <p><strong>Duration:</strong> 3 years</p>
+        <p><strong>Role:</strong> Paid Referee | <strong>Duration:</strong> 3 years</p>
         <ul>
           <li>Officiated 3 games per week</li>
           <li>Officially recognized as a registered referee</li>
@@ -61,7 +58,7 @@
         </ul>
       </div>
 
-      <div class="card">
+      <div class="project-card">
         <h3>Aloha Mind Math Program</h3>
         <p><strong>Graduation:</strong> 2017 - 2023</p>
         <ul>
@@ -70,7 +67,7 @@
         </ul>
       </div>
 
-      <div class="card">
+      <div class="project-card">
         <h3>Kumon English Program (G Level)</h3>
         <p><strong>Graduation:</strong> 2017 - 2023</p>
         <ul>
@@ -78,29 +75,21 @@
         </ul>
       </div>
 
-      <div class="card">
-        <h3>Work Skills</h3>
+      <div class="project-card">
+        <h3>Work Skills & Availability</h3>
         <ul>
           <li>Friendly communication</li>
           <li>Problem solving</li>
-          <li>Teamwork</li>
-          <li>Critical thinking</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Availability</h3>
-        <ul>
-          <li>Monday, Wednesday, Friday evenings</li>
-          <li>Weekends & Holidays</li>
+          <li>Teamwork & critical thinking</li>
+          <li>Availability: Mon, Wed, Fri evenings, weekends & holidays</li>
         </ul>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="fade-in">
+    <section id="contact">
       <h2>Contact</h2>
-      <ul class="contact-list">
+      <ul class="contact-links">
         <li>Email: <a href="mailto:amarpar876@gmail.com">amarpar876@gmail.com</a></li>
         <li>LinkedIn: <a href="https://www.linkedin.com/in/amarparmar" target="_blank">amarparmar</a></li>
       </ul>
@@ -120,19 +109,13 @@
     window.addEventListener("scroll", () => {
       let current = "";
       sections.forEach(section => {
-        const sectionTop = section.offsetTop - 120;
+        const sectionTop = section.offsetTop - 100;
         if (scrollY >= sectionTop) current = section.getAttribute("id");
       });
 
       navLinks.forEach(link => {
         link.classList.remove("active");
         if (link.getAttribute("href") === `#${current}`) link.classList.add("active");
-      });
-
-      // Fade-in sections
-      sections.forEach(section => {
-        const pos = section.getBoundingClientRect().top;
-        if (pos < window.innerHeight - 100) section.classList.add("visible");
       });
     });
   </script>

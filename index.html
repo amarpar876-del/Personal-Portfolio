@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Amar Singh Parmar | Portfolio</title>
+<link rel="stylesheet" href="style.css?v=2" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <h1>Amar Singh Parmar</h1>
+    <p>Reliable, Detail-Oriented, Professional | High School Student</p>
+  </header>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Main content -->
+  <main class="container">
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Hello! I’m a Grade 12 student with a strong work ethic, excellent communication skills, and a passion for helping people. I am reliable, punctual, and eager to contribute to any team environment.</p>
+      <p>In my free time, I enjoy sports, fashion, and learning new skills.</p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li>Customer Service & Communication</li>
+        <li>Teamwork & Collaboration</li>
+        <li>Problem-Solving & Initiative</li>
+        <li>Time Management & Reliability</li>
+      </ul>
+    </section>
+
+    <section id="experience">
+      <h2>Experience & Achievements</h2>
+      <div class="project-card">
+        <h3>School Project: Personal Portfolio</h3>
+        <p>Created a professional personal portfolio website to showcase skills, projects, and achievements using HTML and CSS.</p>
+      </div>
+      <!-- Add any volunteer work, school leadership, or part-time work here -->
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <ul class="contact-links">
+        <li>Email: <a href="mailto:amarpar876@gmail.com">amarpar876@gmail.com</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/amarparmar" target="_blank">amarparmar</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Amar Singh Parmar</p>
+  </footer>
+
+<script>
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".navbar a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 100;
+    if (scrollY >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === `#${current}`) {
+      link.classList.add("active");
+    }
+  });
+});
+</script>
+</body>
+</html>

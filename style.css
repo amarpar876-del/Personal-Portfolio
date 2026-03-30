@@ -36,6 +36,10 @@ body {
   font-weight: 400;
 }
 
+.resume-btn {
+  letter-spacing: 0.5px;
+}
+
 /* Resume Button */
 .resume-btn {
   display: inline-block;
@@ -109,9 +113,27 @@ ul {
   margin-top: 10px;
 }
 
+.project-card {
+  background-color: #f9fafb; /* slightly lighter to stand out */
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
 .project-card h3 {
   color: #2563eb;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+}
+
+.project-card ul li {
+  margin-bottom: 8px;
 }
 
 /* Contact links list */

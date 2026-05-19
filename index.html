@@ -16,8 +16,6 @@
   <a href="Amar Parmar - Resume.pdf" target="_blank" class="resume-btn">View Resume</a>
   </header>
 
-  </header>
-
   <!-- NAVBAR -->
   <nav class="navbar">
     <a href="#about" class="active">About</a>
@@ -117,21 +115,32 @@
 
   <!-- JAVASCRIPT -->
   <script>
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".navbar a");
+  const pages = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll(".navbar a");
 
-    window.addEventListener("scroll", () => {
-      let current = "";
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        if (scrollY >= sectionTop) current = section.getAttribute("id");
+  // Hide all sections except About on load
+  pages.forEach(page => page.style.display = "none");
+  document.getElementById("about").style.display = "block";
+
+  navLinks.forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      const target = link.getAttribute("href").substring(1);
+
+      // Hide all sections
+      pages.forEach(page => {
+        page.style.display = "none";
       });
 
-      navLinks.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === `#${current}`) link.classList.add("active");
-      });
+      // Show selected section
+      document.getElementById(target).style.display = "block";
+
+      // Update active navbar link
+      navLinks.forEach(l => l.classList.remove("active"));
+      link.classList.add("active");
     });
-  </script>
+  });
+</script>
 </body>
 </html>
